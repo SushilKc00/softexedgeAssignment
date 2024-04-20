@@ -32,6 +32,7 @@ export default function Home() {
       <div className="flex sm:justify-center sm:gap-10 gap-4 mt-10 overflow-auto hide-scroll">
         {users.slice(0, 3).map((user) => (
           <button
+            key={user.id}
             className="common-btn flex-none"
             onClick={() => selectUser(user)}
           >

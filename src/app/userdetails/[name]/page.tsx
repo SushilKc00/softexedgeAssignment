@@ -14,7 +14,7 @@ function UserDetails() {
   const dispatch = useAppDispatch();
   const { users, singleUserDetail } = useAppSelector((state) => state.users);
   const [open, setIsopen] = useState(false);
-  const [id, setId] = useState();
+  const [id, setId] = useState<number>();
 
   const userDetails = users.filter(
     (user) => user.name == decodeURIComponent(params.name as string)

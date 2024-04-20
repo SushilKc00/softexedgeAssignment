@@ -1,0 +1,38 @@
+.users-container {
+  .table-container {
+    background-color: rgb(216, 214, 219);
+    box-shadow: 0 0 5px rgb(162, 162, 162);
+    padding: 0.1em;
+    margin-top: 3rem;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgb(244, 243, 243);
+      thead {
+        background-color: rgb(76, 73, 95);
+        color: var(--white);
+        th {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+      tr,
+      th,
+      td {
+        text-align: start;
+        padding: 1.4rem 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      tr {
+        &:nth-child(2n) {
+          background-color: rgb(236, 234, 234);
+        }
+      }
+    }
+  }
+}

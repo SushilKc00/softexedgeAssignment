@@ -5,12 +5,16 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks/hook";
 import Link from "next/link";
 import { getSingleUserDetails, getUserData } from "@/redux/slices/userSlice";
 import { motion } from "framer-motion";
+import { IoClose } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa6";
 
 function UserDetails() {
   const params = useParams();
 
   const dispatch = useAppDispatch();
   const { users, singleUserDetail } = useAppSelector((state) => state.users);
+  const [open, setIsopen] = useState(false);
+  const [id, setId] = useState();
 
   const userDetails = users.filter(
     (user) => user.name == decodeURIComponent(params.name as string)
@@ -34,6 +38,9 @@ function UserDetails() {
       className="w-full"
     >
       <div className="shadow-lg max-w-[800px] mx-auto px-8 py-6 bg-gray-100 mt-20">
+        <Link href={"/"} className="flex justify-end">
+          <IoClose size={20} />
+        </Link>
         <h2 className="text-center text-[2rem] uppercase font-medium">
           User Details
         </h2>
@@ -43,12 +50,15 @@ function UserDetails() {
           </h3>
 
           {/* User Email ***** */}
-          <Link
-            href={userDetails[0]?.website ? userDetails[0]?.website : ""}
-            className="text-primary-dark-blue-violet text-[1.5rem] font-normal bg-gray-200"
-          >
-            Email: {userDetails[0]?.email}
-          </Link>
+
+          <div className="flex justify-between">
+            <Link
+              href={userDetails[0]?.website ? userDetails[0]?.website : ""}
+              className="text-primary-dark-blue-violet text-[1.5rem] font-normal bg-gray-200"
+            >
+              Email: {userDetails[0]?.email}
+            </Link>
+          </div>
 
           {/* User Phone****** */}
           <Link
@@ -59,16 +69,42 @@ function UserDetails() {
           </Link>
 
           {/* UserWebsite Link**** */}
-          <Link
-            // href={userDetails[0].website ? userDetails[0].website : "/"}
-            href={userDetails[0]?.website ? userDetails[0]?.website : ""}
-            className="text-primary-dark-blue-violet text-[1.5rem] font-normal bg-gray-200"
-          >
-            Website: {userDetails[0]?.website}
-          </Link>
+          <div className="text-primary-dark-blue-violet text-[1.5rem] font-normal bg-gray-200 flex justify-between items-start px-2">
+            <div>
+              <Link
+                href={userDetails[0]?.website ? userDetails[0]?.website : ""}
+              >
+                Website: {userDetails[0]?.website}
+              </Link>
+              <div
+                className=""
+                style={{
+                  display: open && id == userDetails[0].id ? "block" : "none",
+                  // height: "0",
+                  // overflow: "hidden",
+                }}
+              >
+                <p>{userDetails[0]?.website}</p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                rotate: open ? "180deg" : "0deg",
+              }}
+            >
+              <FaAngleDown
+                size={15}
+                onClick={() => {
+                  setIsopen(!open);
+                  setId(userDetails[0]?.id);
+                }}
+              />
+            </div>
+          </div>
 
           <div>
-            <p className="text-primary-dark-blue-violet text-[1.5rem] font-normal ">
+            <p className="text-primary-dark-blue-violet text-[1.5rem] font-normal">
               Address: {userDetails[0]?.address?.city}
             </p>
           </div>

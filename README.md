@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This User Management Application is a simple web application built using modern web development technologies including Next.js, Redux Toolkit, and Framer Motion. It allows users to view a list of users fetched from a database and navigate to a detailed page for each user to view their information.
+
+## Technologies Used:
+
+Next.js: Next.js is a React framework for building server-side rendered (SSR) and statically generated web applications.
+
+Redux Toolkit: Redux Toolkit is the official, opinionated, batteries-included toolset for efficient Redux development, making it easier to write Redux logic.
+
+Framer Motion: Framer Motion is a library for React that makes it easy to create smooth animations and gestures.
+
+React: React is a JavaScript library for building user interfaces.
+
+## Features:
+
+User List Page: Displays a list of all users fetched from the database.
+
+User Details Page: Allows users to click on a particular user from the list to view detailed information about that user.
+
+Smooth Transitions: Utilizes Framer Motion for smooth animations and transitions between pages and components.
+
+Redux Integration: Uses Redux Toolkit for managing application state, including fetching and storing user data.
+
+Next.js SSR: Utilizes Next.js for server-side rendering, improving performance and SEO.
+
+## Folder Structure:
+
+src: Root directory where all the components and file
+app: Containes only navigation pages or entry point of web page
+data: Conains only static data for redabele and reusablepurpose
+components: Contains reusable React components used throughout the application.
+styles: Contains only css styles.
+types: Contains the types of data
+redux: Contains Redux Toolkit slices for managing application state.
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Clone the repository: git clone <repository-url>
+Install dependencies: npm install
+Run the development server: npm run dev
+Navigate to http://localhost:3000 in your web browser.
